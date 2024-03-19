@@ -1,0 +1,30 @@
+
+body{
+    padding: 10px;
+    container-type: square;
+    background-color: black;
+    font-size: 10px;
+    color: blue;
+}
+p{
+    style{
+        #amarillo{
+            width: 80%;
+            float: left;
+            height: 40%;
+            background-color: yellow;
+        }
+        #azul{
+            width: auto;
+            float: left;
+            height: 40%;
+            background-color: blue;
+        }
+        #rosado{
+            width: 80%;
+            float: left;
+            height: 40%;
+            background-color: pink;
+        }
+    }
+}
