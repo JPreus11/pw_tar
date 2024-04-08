@@ -21,28 +21,69 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Inicio</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Destinos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Hoteles</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Vuelos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Carrito</a>
-        </li>
+          <a class="nav-link" href="index.html">Inicio</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="destinos.html">Destinos</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="hoteles.html">Hoteles</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="vuelos.html">Vuelos</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="carrito.html">Carrito</a>
+      </li>
       </ul>
     </div>
   </nav>
-
   <div class="container">
     <h1>Elige entre los siguientes hoteles</h1>
-    <!-- Listado de hoteles en forma de tarjetas -->
-    <!-- ... (código de las tarjetas de hoteles) -->
+    <div class="row">
+        <div class="col-lg-3 col-md-4 col-6 px-md-2 px-1 mb-3">
+            <div class="card">
+                <img src="hotel1.jpg" class="card-img-top" alt="Cargando imagen...">
+                <div class="card-body">
+                    <h5 class="card-title" style="color:#001f3f;">Hotel Sheraton</h5>
+                    <p class="card-text"style="color:#001f3f;">
+                      
+                    <hr>
+                    <p class="card-text"style="color: #001f3f;">Precio: $200.000</p>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#hotelsheraton">
+                        Más info.
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="hotelsheraton" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" style="color: #001f3f;">Hotel Sheraton</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              Buen desayuno<br>
+              Piscina al aire libre<br>
+              Parking privado<br>
+              Baño privado<br>
+              2 restaurantes<br>
+              Admite mascotas<br>
+              Vistas<br>
+              WiFi<br>
+              Barbacoa<br>
+              Bañera</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
     <div class="text-center mt-3">
       <a href="vuelos.html" class="btn btn-primary btn-lg">Continuar</a>
     </div>
