@@ -41,12 +41,50 @@
 
   <div class="container">
     <h1>Selecciona tu vuelo</h1>
-    <!-- Listado de vuelos en forma de tarjetas -->
-    <!-- ... (código de las tarjetas de vuelos) -->
-    <div class="text-center mt-3">
+    <div class="container">
+      <h1>Elige entre los siguientes aerolineas</h1>
+      <div class="row">
+          <div class="col-lg-3 col-md-4 col-6 px-md-2 px-1 mb-3">
+              <div class="card">
+                  <img src="latam.jpg" class="card-img-top" alt="Cargando imagen...">
+                  <div class="card-body">
+                      <h5 class="card-title" style="color:#001f3f;">Aerolineas latam</h5>
+                      <p class="card-text"style="color:#001f3f;">
+                        
+                      <hr>
+                      <p class="card-text"style="color: #001f3f;">Precio: $345.000</p>
+                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#hotelsheraton">
+                          Más info.
+                      </button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="modal fade" id="LATAM" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" style="color: #001f3f;">Vuelo en LATAM</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              Vuelo: A25<br>
+              Duracion: 7hrs<br>
+              Numeros de escala: 2 <br>
+              Disponibilidad en first classs<br>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+      <div class="text-center mt-3">
       <a href="carrito.html" class="btn btn-primary btn-lg">Continuar</a>
     </div>
   </div>
+
 
   <div class="container mt-5">
     <div class="row">
