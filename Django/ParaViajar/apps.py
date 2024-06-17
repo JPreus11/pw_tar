@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class ParaviajarConfig(AppConfig):
+class ParaViajarConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
     name = 'ParaViajar'

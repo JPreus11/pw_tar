@@ -1,19 +1,26 @@
 from django.shortcuts import render
-
+# Create your views here.
 def index(request):
-    return render(request, 'ParaViajar/index.html')
-
-def destinos(request):
-    return render(request, 'ParaViajar/destinos.html')
-
-def hoteles(request):
-    return render(request, 'ParaViajar/hoteles.html')
-
-def vuelos(request):
-    return render(request, 'ParaViajar/vuelos.html')
+    context = {}
+    return render(request, "pages/index.html", context)
 
 def confirmar_reserva(request):
-    return render(request, 'ParaViajar/confirmar_reserva.html')
+    context = {}
+    return render(request, "pages/confirmar_reserva.html", context)
+
+def destino(request):
+    context = {}
+    return render(request, "pages/destino.html", context)
+
+def hoteles(request):
+    context = {}
+    return render(request, "pages/hoteles.html", context)
 
 def nosotros(request):
-    return render(request, 'ParaViajar/nosotros.html')
+    context = {}
+    return render(request, "pages/nosotros.html", context)
+
+def vuelos(request):
+    context = {}
+    return render(request, "pages/vuelos.html", context)
+
