@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carrito de Compra - Creación de Paquetes de Viaje</title>
+  <title>Confirmar Reserva - Creación de Paquetes de Viaje</title>
   {% load static %}
   <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
   <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
   <style>
     body {
@@ -15,120 +16,26 @@
   </style>
 </head>
 <body>
-  {% include 'base/navbar.html'%}
-    <div class="container fluid">
-        <h1>Carrito de Compra</h1>
-        <!-- Formulario para introducir los datos de las personas -->
-        <form id="reservaForm" class="row g-3">
-          <div class="col-md-4">
-            <label for="nombre" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="nombre" required>
-          </div>
-          <div class="col-md-4">
-            <label for="apellidos" class="form-label">Apellidos</label>
-            <input type="text" class="form-control" id="apellidos" required>
-          </div>
-          <div class="col-md-4">
-            <label for="rut" class="form-label">RUT</label>
-            <input type="text" class="form-control" id="rut" required>
-          </div>
-          <div class="col-md-4">
-            <label for="correo" class="form-label">Correo</label>
-            <input type="email" class="form-control" id="correo" required>
-          </div>
-          <div class="col-md-4">
-            <label for="telefono" class="form-label">Teléfono</label>
-            <input type="tel" class="form-control" id="telefono" required>
-          </div>
-          <div class="col-md-4">
-            <label for="contactoEmergencia" class="form-label">Contacto de Emergencia</label>
-            <input type="text" class="form-control" id="contactoEmergencia" required>
-          </div>
-          <div class="col-md-6">
-            <label for="genero" class="form-label">Género</label>
-            <select class="form-control" id="genero" required>
-              <option value="">Seleccione</option>
-              <option value="masculino">Masculino</option>
-              <option value="femenino">Femenino</option>
-              <option value="otro">Otro</option>
-            </select>
-          </div>
-          <div class="col-md-6">
-            <label for="discapacidad" class="form-label">¿Tiene alguna discapacidad?</label>
-            <select class="form-control" id="discapacidad" required>
-              <option value="">Seleccione</option>
-              <option value="si">Sí</option>
-              <option value="no">No</option>
-            </select>
-          </div>
-          <div class="col-md-4">
-            <label for="asistencia" class="form-label">¿Requiere asistencia?</label>
-            <select class="form-control" id="asistencia" required>
-              <option value="">Seleccione</option>
-              <option value="si">Sí</option>
-              <option value="no">No</option>
-            </select>
-          </div>
-          <div class="col-md-4">
-            <label for="mascota" class="form-label">¿Viaja con mascota?</label>
-            <select class="form-control" id="mascota" required>
-              <option value="">Seleccione</option>
-              <option value="si">Sí</option>
-              <option value="no">No</option>
-            </select>
-          </div>
-          <div class="col-md-4">
-            <label for="equipajeAdicional" class="form-label">¿Necesita equipaje adicional?</label>
-            <select class="form-control" id="equipajeAdicional" required>
-              <option value="">Seleccione</option>
-              <option value="si">Sí</option>
-              <option value="no">No</option>
-            </select>
-          </div>
-          <div class="col-md-4">
-            <label for="cambioAsiento" class="form-label">¿Desea cambio de asiento?</label>
-            <select class="form-control" id="cambioAsiento" required>
-              <option value="">Seleccione</option>
-              <option value="si">Sí</option>
-              <option value="no">No</option>
-            </select>
-          </div>
-          <div class="col-md-4">
-            <label for="seguroVuelo" class="form-label">¿Desea seguro de vuelo?</label>
-            <select class="form-control" id="seguroVuelo" required>
-              <option value="">Seleccione</option>
-              <option value="si">Sí</option>
-              <option value="no">No</option>
-            </select>
-          </div>
-          <div class="col-md-4">
-            <label for="habitacionPremium" class="form-label">¿Desea cambio a habitación premium?</label>
-            <select class="form-control" id="habitacionPremium" required>
-              <option value="">Seleccione</option>
-              <option value="si">Sí</option>
-              <option value="no">No</option>
-            </select>
-          </div>
-          <div class="col-md-4">
-            <label for="alimentacionPremium" class="form-label">¿Desea cambio a alimentación premium?</label>
-            <select class="form-control" id="alimentacionPremium" required>
-              <option value="">Seleccione</option>
-              <option value="si">Sí</option>
-              <option value="no">No</option>
-            </select>
-          </div>
-          <div class="col-md-8  ">
-            <label for="serviciosAdicionales" class="form-label">Servicios Adicionales</label>
-            <textarea class="form-control" id="serviciosAdicionales" rows="3" placeholder="Describa aquí los servicios adicionales que desea" required></textarea>
-          </div>
-          <div class="text-center mt-3">
-            <button type="submit" class="btn btn-success btn-lg">Confirmar Reserva</button>
-          </div>
-        </form>
-        <div class="alert alert-success mt-3" role="alert" id="successMessage" style="display: none;">
-          La reserva se ha realizado con éxito.
-        </div>
+  {% include 'base/navbar.html' %}
+  <div class="container-fluid">
+    <h1>Confirmar Reserva</h1>
+    
+    <!-- Formulario para ingresar datos de reserva -->
+    <form method="POST" class="row g-3">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <div class="col-md-12 text-center">
+        <button type="submit" class="btn btn-success btn-lg mt-3">Agregar Reserva</button>
       </div>
+    </form>
 
-  {%include 'base/footer.html'%}
+    {% if success_message %}
+      <div class="alert alert-success mt-3" role="alert">
+        {{ success_message }}
+      </div>
+    {% endif %}
+  </div>
+
+  {% include 'base/footer.html' %}
 </body>
+</html>

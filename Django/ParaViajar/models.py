@@ -1,6 +1,5 @@
 from django.db import models
 
-# Create your models here. admin: contraseña
 class Reserva(models.Model):
     nombre = models.CharField(max_length=255, blank=False, null=False)
     apellido = models.CharField(max_length=255, blank=False, null=False)

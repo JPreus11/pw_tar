@@ -1,0 +1,31 @@
+body {
+    background-color: #001f3f;
+    color: white;
+}
+
+h1, h2 {
+    text-align: center;
+    margin-top: 20px;
+    color: #FFD700;
+}
+
+.table {
+    margin-top: 20px;
+}
+
+.table th, .table td {
+    color: #FFFFFF;
+}
+
+.form-control, .btn {
+    margin-bottom: 10px;
+}
+
+.btn {
+    background-color: #FFD700;
+    border: none;
+}
+
+.btn:hover {
+    background-color: #FFC700;
+}
