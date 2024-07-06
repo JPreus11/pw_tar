@@ -5,97 +5,148 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Elige tu hotel - Creación de Paquetes de Viaje</title>
   {% load static %}
-  <link href="{% static 'css/bootstrap.min.css'%}" rel="stylesheet">
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
   <style>
     body {
       background-color: #001f3f;
       color: white;
+      font-family: 'Arial', sans-serif;
     }
-    .login-button {
-        background-color: rgb(135, 173, 250);
-        color: black;
-        font-size: 16px;
-        padding: 8px 16px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
+    .navbar {
+      background-color: #003366;
+    }
+    .navbar-brand, .nav-link {
+      color: #ffffff !important;
+    }
+    .navbar-toggler-icon {
+      background-image: url("{% static 'img/menu-icon.svg' %}");
+    }
+    .hero-section {
+      background-color: #003366;
+      padding: 40px 0;
+      text-align: center;
+    }
+    .hero-section h1 {
+      font-size: 2.5rem;
+      color: #ffffff;
+    }
+    .hero-section p {
+      font-size: 1.1rem;
+      color: #e0e0e0;
+    }
+    .card {
+      border: none;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .card-img-top {
+      border-bottom: 5px solid #003366;
+    }
+    .card-body {
+      background-color: #00264d;
+    }
+    .card-title {
+      color: #ffffff;
+      font-size: 1.25rem;
+    }
+    .card-text {
+      color: #cccccc;
+    }
+    .btn-primary-custom {
+      background-color: #007bff;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+    .btn-primary-custom:hover {
+      background-color: #0056b3;
+    }
+    .text-center {
+      margin-top: 20px;
+    }
+    .container {
+      margin-top: 30px;
+    }
+    @media (max-width: 767.98px) {
+      .container {
+        margin-top: 15px;
+      }
     }
   </style>
 </head>
 <body>
-    {% include 'base/navbar.html'%}
-    <div class="container">
+    {% include 'base/navbar.html' %}
+    
+    <div class="hero-section">
         <h1>Elige entre los siguientes hoteles</h1>
+        <p>Selecciona el hotel que más te guste y continúa con tu reserva.</p>
+    </div>
+
+    <div class="container">
         <div class="row">
-            <div class="col-lg-3 col-md-4 col-6 px-md-2 px-1 mb-3">
+            <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card">
-                    <img src="{% static 'img/hotel1.jpg' %}" class="card-img-top" alt="Cargando imagen...">
+                    <img src="{% static 'img/hotel1.jpg' %}" class="card-img-top" alt="Hotel Sheraton">
                     <div class="card-body">
-                        <h5 class="card-title" style="color:#001f3f;">Hotel Sheraton</h5>
-                        <p class="card-text"style="color:#001f3f;">
-                        <hr>
-                        <p class="card-text"style="color: #001f3f;">Precio: $200.000
-                            <br>
+                        <h5 class="card-title">Hotel Sheraton</h5>
+                        <p class="card-text">
+                            <strong>Precio:</strong> $200.000<br>
                             El Sheraton Santiago dispone de 525 habitaciones de diferentes categorías que 
-                            ofrecen un servicio incomparable. <br>
-                            Cuando se trata de una estancia inolvidable, nuestras habitaciones en Santiago 
-                            te brindarán la combinación perfecta de tranquilidad y <br>
-                            confort, con vistas inigualables a la ciudad, la Cordillera de los Andes y el 
-                            Cerro San Cristóbal.                  
+                            ofrecen un servicio incomparable. Cuando se trata de una estancia inolvidable, 
+                            nuestras habitaciones en Santiago te brindarán la combinación perfecta de tranquilidad 
+                            y confort, con vistas inigualables a la ciudad, la Cordillera de los Andes y el Cerro San Cristóbal.
                         </p>
-                        <div class="text-center mt-3">
-                            <a href="{% url 'vuelos' %}" class="btn btn-primary btn-lg">Continuar</a>
+                        <div class="text-center">
+                            <a href="{% url 'vuelos' %}" class="btn btn-primary-custom">Continuar</a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-4 col-6 px-md-2 px-1 mb-3">
+            <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card">
-                    <img src="{% static 'img/hotel2.jpg' %}" class="card-img-top" alt="Cargando imagen...">
+                    <img src="{% static 'img/hotel2.jpg' %}" class="card-img-top" alt="Hotel W Santiago">
                     <div class="card-body">
-                        <h5 class="card-title" style="color:#001f3f;">Hotel W Santiago</h5>
-                        <p class="card-text"style="color:#001f3f;">
-                        <hr>
-                        <p class="card-text"style="color: #001f3f;">Precio: $250.000
-                            <br>
-                            Disfruta de la combinación perfecta entre lujo y comodidad en el Hotel W 
-                            Santiago. Con una ubicación privilegiada en el corazón de la ciudad, el Hotel 
-                            W Santiago te ofrece una experiencia inolvidable con su servicio de primera 
-                            clase y sus instalaciones de primer nivel.
+                        <h5 class="card-title">Hotel W Santiago</h5>
+                        <p class="card-text">
+                            <strong>Precio:</strong> $250.000<br>
+                            Disfruta de la combinación perfecta entre lujo y comodidad en el Hotel W Santiago. 
+                            Con una ubicación privilegiada en el corazón de la ciudad, el Hotel W Santiago te ofrece 
+                            una experiencia inolvidable con su servicio de primera clase y sus instalaciones de primer nivel.
                         </p>
-
-                        <div class="text-center mt-3">
-                            <a href="{% url 'vuelos' %}" class="btn btn-primary btn-lg">Continuar</a>
+                        <div class="text-center">
+                            <a href="{% url 'vuelos' %}" class="btn btn-primary-custom">Continuar</a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-4 col-6 px-md-2 px-1 mb-3">
+            <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card">
-                    <img src="{% static 'img/hotel3.jpg' %}" class="card-img-top" alt="Cargando imagen...">
+                    <img src="{% static 'img/hotel3.jpg' %}" class="card-img-top" alt="Hotel Plaza San Francisco">
                     <div class="card-body">
-                        <h5 class="card-title" style="color:#001f3f;">Hotel Plaza San Francisco</h5>
-                        <p class="card-text"style="color:#001f3f;">
-                        <hr>
-                        <p class="card-text"style="color: #001f3f;">Precio: $180.000
-                            <br>
-                            Descubre la elegancia y el encanto del Hotel Plaza San Francisco, ubicado en el 
-                            corazón de Santiago. Con su rica historia y su estilo clásico, el Hotel Plaza 
-                            San Francisco te ofrece una estancia inolvidable con su cálida hospitalidad y 
-                            su ambiente acogedor.
+                        <h5 class="card-title">Hotel Plaza San Francisco</h5>
+                        <p class="card-text">
+                            <strong>Precio:</strong> $180.000<br>
+                            Descubre la elegancia y el encanto del Hotel Plaza San Francisco, ubicado en el corazón de Santiago. 
+                            Con su rica historia y su estilo clásico, el Hotel Plaza San Francisco te ofrece una estancia inolvidable 
+                            con su cálida hospitalidad y su ambiente acogedor.
                         </p>
-
-                        <div class="text-center mt-3">
-                            <a href="{% url 'vuelos' %}" class="btn btn-primary btn-lg">Continuar</a>
+                        <div class="text-center">
+                            <a href="{% url 'vuelos' %}" class="btn btn-primary-custom">Continuar</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    </div>
 
-{%include 'base/footer.html'%}
+    {% include 'base/footer.html' %}
 </body>
+</html>

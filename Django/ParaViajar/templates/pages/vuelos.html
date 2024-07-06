@@ -1,76 +1,209 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aerolineas</title>
+    <title>Aerolíneas en Chile</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
     <style>
+        body {
+            background-color: #001f3f;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
         .page-header {
             background-color: #007bff;
             padding: 20px;
             border-radius: 5px;
+            color: #fff;
+            text-align: center;
         }
-        body {
-            background-color: #001f3f;
+        .card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+        .card-body {
+            background-color: #fff;
+            color: #001f3f;
+            padding: 15px;
+            border-top: 3px solid #007bff;
+            border-radius: 0 0 10px 10px;
+        }
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        .modal-content {
+            border-radius: 10px;
         }
     </style>
 </head>
 <body>
-    {% include 'base/navbar.html'%}
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col-12">
-                <h1 class="page-header text-center mx-auto text-white">Aerolineas</h1>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12">
-                <div class="row mb-md-5 mb-4 mx-md-n2 mx-n1 no-gutters">
-                    <div class="col-lg-3 col-md-4 col-6 px-md-2 px-1 mb-3">
-                        <div class="card">
-                            <img src="{% static 'img/latam.jpg' %}" class="card-img-top" alt="Cargando imagen...">
-                            <div class="card-body">
-                                <div class="card-title">Aerolinea Latam</div>
-                                <p class="card-text">Precio: $345.000</p>
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#latam">
-                                    Más info.
-                                </button>
+    {% include 'base/navbar.html' %}
 
-                                <div class="modal fade" id="latam" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">Vuelo en Latam</h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
-                                                Vuelo: A25<br>
-                                                Duración: 7hrs<br>
-                                                Número de escalas: 2 <br>
-                                                Disponibilidad en first class
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+    <div class="container mt-5">
+        <h1 class="page-header">Aerolíneas</h1>
+        <div class="row mt-4">
+            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+                <div class="card">
+                    <img src="{% static 'img/latam.jpg' %}" class="card-img-top" alt="LATAM Airlines">
+                    <div class="card-body">
+                        <h5 class="card-title">LATAM Airlines</h5>
+                        <p class="card-text">Precio: $345.000</p>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#latamModal">
+                            Más info
+                        </button>
                     </div>
-                    <!-- Agrega más cards aquí si es necesario -->
+                </div>
+            </div>
+
+       
+            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+                <div class="card">
+                    <img src="{% static 'img/skyfoto.png' %}" class="card-img-top" alt="Sky Airline">
+                    <div class="card-body">
+                        <h5 class="card-title">Sky Airline</h5>
+                        <p class="card-text">Precio: $220.000</p>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#skyModal">
+                            Más info
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+                <div class="card">
+                    <img src="{% static 'img/jetfoto.png' %}" class="card-img-top" alt="JetSMART">
+                    <div class="card-body">
+                        <h5 class="card-title">JetSMART</h5>
+                        <p class="card-text">Precio: $180.000</p>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#jetSMARTModal">
+                            Más info
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+    
+            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+                <div class="card">
+                    <img src="{% static 'img/dapfoto.jpeg' %}" class="card-img-top" alt="Aerovías DAP">
+                    <div class="card-body">
+                        <h5 class="card-title">Aerovías DAP</h5>
+                        <p class="card-text">Precio: $400.000</p>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#dapModal">
+                            Más info
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <br>
-    <div class="text-center mt-3">
-        <a href="{% url 'confirmar_reserva'%}" class="btn btn-primary btn-lg">Continuar</a>
+
+
+    <div class="modal fade" id="latamModal" tabindex="-1" aria-labelledby="latamModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="latamModalLabel">Vuelo en LATAM Airlines</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Vuelo: LA123<br>
+                    Duración: 6 hrs<br>
+                    Número de escalas: 1<br>
+                    Disponibilidad en primera clase
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>   
+    
+    <div class="modal fade" id="skyModal" tabindex="-1" aria-labelledby="skyModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="skyModalLabel">Vuelo en Sky Airline</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Vuelo: SK456<br>
+                    Duración: 4 hrs<br>
+                    Número de escalas: 0<br>
+                    Disponibilidad en clase económica
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="modal fade" id="jetSMARTModal" tabindex="-1" aria-labelledby="jetSMARTModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="jetSMARTModalLabel">Vuelo en JetSMART</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Vuelo: J789<br>
+                    Duración: 5 hrs<br>
+                    Número de escalas: 1<br>
+                    Disponibilidad en clase económica
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="dapModal" tabindex="-1" aria-labelledby="dapModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="dapModalLabel">Vuelo en Aerovías DAP</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Vuelo: DAP100<br>
+                    Duración: 3 hrs<br>
+                    Número de escalas: 0<br>
+                    Disponibilidad en clase económica
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center mt-4">
+        <a href="{% url 'confirmar_reserva' %}" class="btn btn-primary btn-lg">Continuar</a>
+    </div>
+
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    {% include 'base/footer.html' %}
 </body>
-{%include 'base/footer.html'%}
 </html>

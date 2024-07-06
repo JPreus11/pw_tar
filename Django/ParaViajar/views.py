@@ -56,3 +56,7 @@ def delete_reserva(request, pk):
         reserva.delete()
         return redirect('avion_de_compras')
     return render(request, 'pages/delete.html', {'reserva': reserva})
+
+def Ofertas(request):
+    context = {}
+    return render(request, "pages/Ofertas.html", context)

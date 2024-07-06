@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Confirmar Reserva - Creación de Paquetes de Viaje</title>
+  <title>Creación de Paquetes de Viaje</title>
   {% load static %}
   <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
@@ -18,14 +18,13 @@
 <body>
   {% include 'base/navbar.html' %}
   <div class="container-fluid">
-    <h1>Confirmar Reserva</h1>
+    <h1>Datos Para Paquete</h1>
     
-    <!-- Formulario para ingresar datos de reserva -->
     <form method="POST" class="row g-3">
       {% csrf_token %}
       {{ form.as_p }}
       <div class="col-md-12 text-center">
-        <button type="submit" class="btn btn-success btn-lg mt-3">Agregar Reserva</button>
+        <button type="submit" class="btn btn-success btn-lg mt-3">Agregar Datos</button>
       </div>
     </form>
 
