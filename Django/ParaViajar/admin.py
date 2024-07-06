@@ -1,6 +1,5 @@
 from django.contrib import admin
 from .models import Reserva, Genero, Discapacidad, Asistencia, Mascota, EAdicional, Asiento, Seguro, HPremiun, APremiun
-# Register your models here.
 
 admin.site.register(Reserva)
 admin.site.register(Genero)
